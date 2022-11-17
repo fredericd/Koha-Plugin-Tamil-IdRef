@@ -1,0 +1,18 @@
+[% INCLUDE "$PLUGIN_DIR/head.tt" %]
+
+<div class="row">
+ <h1>Tamil IdRef</h1>
+</div>
+
+<div class="row">
+ <div class="col-md-6">
+  <p>
+   <b>Tamil IdRef</b> est un outil permettant d'exploiter à partir de Koha
+   le référentiel <a hre="https://www.idref.fr">IdRef</a>.
+  </p>
+ </div>
+</div>
+<div class="col-md-6">
+</div>
+
+[% INCLUDE "$PLUGIN_DIR/foot.tt" %]

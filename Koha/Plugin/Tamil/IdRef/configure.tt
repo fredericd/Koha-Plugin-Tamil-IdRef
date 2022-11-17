@@ -1,0 +1,46 @@
+[% INCLUDE "$PLUGIN_DIR/head.tt" %]
+
+<h1>Configuration de Tamil IdRef</h1>
+
+<form method="get">
+
+ <input type="hidden" name="class" value="[% CLASS %]"/>
+ <input type="hidden" name="method" value="[% METHOD %]"/>
+
+ <fieldset class="rows">
+  <legend>IdRef</legend>
+  <ol>
+   <li>
+    <label for="idref.url">Point d'accès : </label>
+    <input id="idref.url" type="input" name="idref.url" size="50" value="[% c.idref.url %]" />
+   </li>
+  </ol>
+ </fieldset>
+
+ <fieldset class="rows">
+  <legend>Page Catalogage</legend>
+  <ol>
+   <li>
+    <label for="catalog.enabled">Activer : </label>
+    <input id="catalog.enabled" type="checkbox" name="catalog.enabled" size="15" value="1" [% IF c.catalog.enabled == 1 %]checked[% END %] />
+    la recherche dans IdRef depuis la page de Catalogage
+   </li>
+   <li>
+    <label for="catalog.fields">Champs : </label>
+    <textarea id="catalog.fields" name="catalog.fields" rows="5" cols="100">[% c.catalog.fields %]</textarea>
+    <p>
+      Entrez ici la liste des champs Unimarc pour lesquelles vous voulez lancer des recherches
+      dans IdRef. Séparez les champs par un retour à la liste.
+    </p>
+   </li>
+  </ol>
+ </fieldset>
+
+ <fieldset class="action">
+  <input type="hidden" name="save" value="1" />
+  <input type="submit" value="Enregistrer" />
+ </fieldset>
+
+</form>
+
+[% INCLUDE "$PLUGIN_DIR/foot.tt" %]

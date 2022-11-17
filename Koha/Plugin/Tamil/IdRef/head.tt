@@ -1,0 +1,33 @@
+[% INCLUDE 'doc-head-open.inc' %]
+ <title>Tamil IdRef</title>
+[% INCLUDE 'doc-head-close.inc' %]
+</head>
+<body>
+[% INCLUDE 'header.inc' %]
+[% INCLUDE 'cat-search.inc' %]
+
+<div id="breadcrumbs">
+ <a href="/cgi-bin/koha/mainpage.pl">Accueil</a> &rsaquo; 
+ <a href="/cgi-bin/koha/plugins/plugins-home.pl">Plugins</a> &rsaquo; Abes WS
+</div>
+
+<div class="main container-fluid">
+ <div class="row-fluid">
+
+  <div class="col-md-2">
+   <div id="navmenu">
+    <ul>
+     <a href="http://www.idref.fr" alt="IdRef Identifiants et Référentiel">
+      <img src="[% PLUGIN_PATH %]/img/logo-idref.svg" style='max-width:80%;'/>
+     </a>
+     <ul style="padding-top:10px;">
+      <li><a href="?class=[% CLASS %]&method=tool">Accueil </a></li>
+      <li><a href="?class=[% CLASS %]&method=tool&ws=realign">Réalignement</a></li>
+      <li><a href="?class=[% CLASS %]&method=configure">Configuration</a></li>
+     </ul>
+    </ul>
+   </div>
+  </div>
+
+  <div class="col-md-10">
+  

@@ -100,23 +100,37 @@ function escapeHtml(texte) {
     .replace(/'/g, "&#039;");
 }
 
+function parseMarcHeading(xml) {
+  let pos = xml.indexOf('<datafield tag="2');
+  if (pos === -1) return;
+
+  xml = xml.substring(pos+40);
+  pos = xml.indexOf('</datafield>');
+  xml = xml.substring(0, pos-3);
+  const lines = xml.split("\n");
+  const field = {};
+  lines.forEach((line) => {
+    const letter = line.substr(20, 1);
+    let value = line.substr(23);
+    value = value.substr(0, value.length-11);
+    field[letter] = value;
+  });
+  return field;
+}
+
 function traiteResultat(e) {
   let data = e.data;
   data = serializer.parse(data);
-  if ( data.b === undefined) return;
 
-  current.set('3', data.b);
-  current.set('a', data.c);
-  current.set('b', data.d);
+  const ppn = data.b;
+  if (ppn === undefined) return;
+  current.set('3', ppn);
   
-  // Récupération des dates entre parenthèses
-  i = data.e;
-  if (i) {
-    i = i.indexOf('(');
-    if (i !== -1) {
-      current.set('f', data.e.substr(i + 1, data.e.length - i - 2));
-    }
-  }
+  const field = parseMarcHeading(data.f);
+  ['a','b','c','d','e','f','g','h','p'].forEach((letter) => {
+    const value = field[letter] || '';
+    if (value) current.set(letter, value);
+  });
 
   hidePopWin(null);
 }
@@ -132,7 +146,7 @@ function onClick(e, div) {
   if (tag == '601' || tag == '710' || tag == '711' || tag == '712' ) index = 'Nom de collectivité';
   let value = current.get('3');
   if (value) {
-    index = 'Ppn';
+    index = 'Identifiant IdRef (n°PPN)';
   } else {
     value = current.get('a') + ' ' + current.get('b');
     value = value.replace(/'/g, "\\\'");

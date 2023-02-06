@@ -62,6 +62,7 @@ sub config {
     }
     $c->{idref} ||= {};
     $c->{idref}->{url} ||= 'https://www.idref.fr';
+    $c->{idref}->{idclient} ||= 'tamil';
     $c->{metadata} = $self->{metadata};
 
     my @fields = split /\r|\n/, $c->{catalog}->{fields};
@@ -78,6 +79,7 @@ sub get_form_config {
     my $c = {
         idref => {
             url => undef,
+            idclient => undef,
         },
         catalog => {
             enabled => 0,

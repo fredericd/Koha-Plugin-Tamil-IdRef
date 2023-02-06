@@ -77,13 +77,11 @@ function initClient() {
   showPopWin("", screen.width*0.7, screen.height*0.6, null);
   remoteClientExist = true;
   if (document.addEventListener) {
-    console.log('OPTION 1');
     window.addEventListener("message", function(e) {
       traiteResultat(e);
     });
   }
   else {
-    console.log('OPTION 2');
     window.attachEvent('onmessage', function(e) {
       traiteResultat(e);
     });
@@ -155,7 +153,7 @@ function onClick(e, div) {
   const message = {
     Index1: index,
     Index1Value: value,
-    fromApp: 'KohaTamilIdRef',
+    fromApp: `koha-${c.idref.idclient}`,
   };
 
   let auttag =

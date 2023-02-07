@@ -18,8 +18,8 @@
     <label for="idref.idclient">ID Client : </label>
     <input id="idref.idclient" type="input" name="idref.idclient" size="50" value="[% c.idref.idclient %]" />
     <p>
-      Indentifiant de votre instance de Koha. Cette info sera préfixée par "koha-" pour identifier
-      vos accès à IdRef auprès de l'ABES.
+      Indentifiant de votre instance de Koha. Cet identifiant servira à
+      identifier vos accès à IdRef auprès de l'ABES.
     </p>
    </li>
   </ol>

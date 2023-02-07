@@ -150,10 +150,16 @@ function onClick(e, div) {
     value = value.replace(/'/g, "\\\'");
   }
 
+
+  const { idclient } = c.idref;
+  let ymd = new Date().toISOString().split('T')[0].replace(/-/g, '');
   const message = {
     Index1: index,
     Index1Value: value,
-    fromApp: `koha-${c.idref.idclient}`,
+    fromApp: idclient,
+    'z686_a': idclient,
+    'z686_c': idclient,
+    'z686_2': ymd,
   };
 
   let auttag =
@@ -194,7 +200,6 @@ function onClick(e, div) {
     idrefinit = false;
   }
 
-  console.log(message);
   oFrame.contentWindow.postMessage(serializer.stringify(message), "*");
 
   e.preventDefault();

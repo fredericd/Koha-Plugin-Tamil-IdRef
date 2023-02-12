@@ -67,7 +67,7 @@ const serializer = {
 function initClient() {
 
   // Rend la fenêtre déplaçable
-  $("#popupContainer").draggable();
+  // $("#popupContainer").draggable();
 
   if (remoteClientExist) {
     showPopWin("", screen.width*0.7, screen.height*0.6, null);

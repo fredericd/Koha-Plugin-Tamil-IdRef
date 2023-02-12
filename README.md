@@ -3,7 +3,7 @@
 **Tamil IdRef** est un plugin Koha qui permet d'exploiter dans Koha le
 référentiel [IdRef](https://idref.fr) de l'ABES.
 
-![IdRef](https://github.com/fredericd/Koha-Plugin-Tamil-IdRef/blob/master/Koha/Plugin/Tamil/IdRef/img/logo-idref.svg)
+![IdRef](https://raw.githubusercontent.com/fredericd/Koha-Plugin-Tamil-IdRef/master/Koha/Plugin/Tamil/IdRef/img/logo-idref.svg)
 
 ## Réservoir d'autorités
 

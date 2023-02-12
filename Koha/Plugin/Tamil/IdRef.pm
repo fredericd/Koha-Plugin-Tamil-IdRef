@@ -23,11 +23,11 @@ our $metadata = {
     description     => 'Catalogage avec IdRef',
     author          => 'Tamil s.a.r.l.',
     date_authored   => '2021-10-15',
-    date_updated    => "2021-10-15",
+    date_updated    => "2023-02-11",
     minimum_version => '17.05.00.000',
     maximum_version => undef,
-    copyright       => '2022',
-    version         => '1.0.1',
+    copyright       => '2023',
+    version         => '1.0.2',
 };
 
 

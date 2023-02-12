@@ -7,12 +7,12 @@ référentiel [IdRef](https://idref.fr) de l'ABES.
 
 IdRef c'est d'abord le réservoir de **notices d'autorités** géré par l'ABES. 
 
-- **Utilisation** - Ces notices d'autorités sont utilisées dans le Catalogue collectif des
-  bibliothèques et centres de documentation des établissements français de
-  l'enseignement supérieur et de la recherche, le **Sudoc**. D'autres bases de
-  données utilisent IdRef : celles de l'ABES, Calames et Theses ; celles
-  d'organismes ou d'établissements indépendants de l'ABES, comme
-  [Frantiq](https://www.frantiq.fr/).
+- **Utilisation** - Ces notices d'autorités sont utilisées dans le Catalogue
+  collectif des bibliothèques et centres de documentation des établissements
+  français de l'enseignement supérieur et de la recherche, le **Sudoc**.
+  D'autres bases de données utilisent IdRef : celles de l'ABES, Calames et
+  Theses ; celles d'organismes ou d'établissements indépendants de l'ABES,
+  comme [Frantiq](https://www.frantiq.fr).
 
 - **PPN** -Chaque autorité est identifiée par un identifiant unique, appelé PPN
 
@@ -60,7 +60,7 @@ points suivants :
 
 **📁 TÉLÉCHARGEMENT** — Récupérez sur le site [Tamil](https://www.tamil.fr)
 l'archive de l'Extension **[Tamil
-IdRef](https://www.tamil.fr/download/koha-plugin-tamil-idref-1.0.0.kpz)**.
+IdRef](https://www.tamil.fr/download/koha-plugin-tamil-idref-1.0.2.kpz)**.
 
 Dans l'interface pro de Koha, allez dans `Outils > Outils de Plugins`. Cliquez
 sur Télécharger un plugin. Choisissez l'archive **téléchargée** à l'étape
@@ -71,7 +71,26 @@ précédente. Cliquez sur Télécharger.
 ### Configuration
 
 Dans les Outils de plugins, vous voyez l'Extension **Tamil IdRef > Actions >
-Configurer**.
+Configurer**. Le paramétrage est divisé en deux sections : IdRef et Page
+Catalogage:
+
+- **IdRef** — Les infos permettant d'établir un lien au service IdRef de
+  l'ABES:
+  - **Point d'accès** — L'URL du pont d'accès à IdRef. Par défaut
+    `https://www.idref.fr`. En phase de test, on peut obtenir de l'ABES une
+    autre URL.
+  - **ID Client** — Identifiant de l'établissement utilisant les services web
+    de l'ABES. Cet identifiant permet à l'ABES de tenir à jour des statistiques
+    d'usage de ses services par établissement.
+
+- **Page Catalogage** — Fonctionnement du plugin dans la page de catalogage de
+  Koha:
+  - **Activer** — Bascule permettant d'activer/desactiver l'utilisation de
+    IdRef en catalogage.
+  - **Champs** — La liste des champs pour lesquels le lien à IdRef est établi.
+    Le lien aux zones 7xx est pleinement fonctionnel. Pour les zones Rameau
+    (6xx), ce n'est pas encore totalement le cas.
+
 
 ### Catalogage
 
@@ -81,11 +100,12 @@ Configurer**.
 
 ## VERSIONS
 
+* **1.0.2** / février 2023
 * **1.0.0** / octobre 2021 — Version initiale
 
 ## LICENCE
 
-This software is copyright (c) 2021 by Tamil s.a.r.l..
+This software is copyright (c) 2023 by Tamil s.a.r.l..
 
 This is free software; you can redistribute it and/or modify it under the same
 terms as the Perl 5 programming language system itself.

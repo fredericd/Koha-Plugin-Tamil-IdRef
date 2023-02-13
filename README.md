@@ -38,16 +38,16 @@ de faire le plugin Koha **Tamil IdRef**.
 Le plugin Tamil IdRef permet d'exploiter IdRef depuis Koha et de réaliser deux
 grandes catégories de tâches :
 
-1. **Catalogage** — Dans les grilles de saisie de Koha, sur les champs que l'on
-   choisit de lier à IdRef, un bouton est ajouté qui permet de lancer une
+1. **Catalogage** — Dans les grilles de saisie de Koha, sur les champs qu'on a
+   choisi de lier à IdRef, un bouton est ajouté qui permet de lancer une
    recherche des autorités IdRef. L'autorité sélectionée sert à remplir les
    zones et sous-zones Unimarc idoines.
 
 1. **Réalignement** — Dans le référentiel IdRef, des termes sont supprimés,
    déplacés, fusionnés. Un mécanisme exploitant les services web de IdRef permet
    de reporter automatiquement ces modifications dans le Catalogue Koha. Les
-   notices bibligraphiques du Catalogue Koha sont scannées. Pour chaque chaque
-   zone liée à IdRef, le PPN est contrôlé dans IdRef. Les infos d'IdRef sont
+   notices bibligraphiques du Catalogue Koha sont scannées. Pour chaque zone
+   liée à IdRef, le PPN est contrôlé dans IdRef. Les infos d'IdRef sont
    reportés dans les notices.
 
 ## Installation

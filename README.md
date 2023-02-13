@@ -48,7 +48,7 @@ grandes catégories de tâches :
    de reporter automatiquement ces modifications dans le Catalogue Koha. Les
    notices bibligraphiques du Catalogue Koha sont scannées. Pour chaque zone
    liée à IdRef, le PPN est contrôlé dans IdRef. Les infos d'IdRef sont
-   reportés dans les notices.
+   reportées dans les notices.
 
 ## Installation
 
@@ -87,7 +87,7 @@ Catalogage:
 
 - **Page Catalogage** — Fonctionnement du plugin dans la page de catalogage de
   Koha:
-  - **Activer** — Bascule permettant d'activer/desactiver l'utilisation de
+  - **Activer** — Bascule permettant d'activer/désactiver l'utilisation de
     IdRef en catalogage.
   - **Champs** — La liste des champs pour lesquels le lien à IdRef est établi.
     Le lien aux zones 7xx est pleinement fonctionnel. Pour les zones Rameau

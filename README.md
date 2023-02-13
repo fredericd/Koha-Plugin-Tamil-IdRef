@@ -101,14 +101,14 @@ Catalogage:
 Sur la page de catalogage standard de Koha, des boutons sont affichés qui
 permettent de lancer une page de recherche dans IdRef. L'autorité que l'on
 trouve est ensuite _liée_, ce qui veut dire que son identifiant (PPN) est
-recopié dans la sous-zone $3 de la zone Unimarc, ainsi que les autres
+recopié dans la sous-zone paramétrée de la zone Unimarc, ainsi que les autres
 sous-zones.
 
 ### Réalignement
 
 Un script de réalignement peut être programmé pour réaligner automatiquement
 les notices bibliographiques avec les autorités IdRef : modification des
-sous-zone et fusions d'autorités avec report des nouveaux PPN.
+sous-zones et fusions d'autorités avec report des nouveaux PPN.
 
 ## VERSIONS
 

@@ -99,21 +99,39 @@ function escapeHtml(texte) {
 }
 
 function parseMarcHeading(xml) {
-  let pos = xml.indexOf('<datafield tag="2');
-  if (pos === -1) return;
-
-  xml = xml.substring(pos+40);
-  pos = xml.indexOf('</datafield>');
-  xml = xml.substring(0, pos-3);
-  const lines = xml.split("\n");
-  const field = {};
-  lines.forEach((line) => {
-    const letter = line.substr(20, 1);
-    let value = line.substr(23);
-    value = value.substr(0, value.length-11);
-    field[letter] = value;
-  });
-  return field;
+  const fields = [];
+  while (1) {
+    let pos = xml.indexOf('<datafield tag="2');
+    if (pos === -1) break;
+    xml = xml.substring(pos+40);
+    pos = xml.indexOf('</datafield>');
+    let raw = xml.substring(0, pos-3);
+    xml = xml.substring(pos+3);
+    const lines = raw.split("\n");
+    const field = {};
+    lines.forEach((line) => {
+      const letter = line.substr(20, 1);
+      let value = line.substr(23);
+      value = value.substr(0, value.length-11);
+      field[letter] = value;
+    });
+    fields.push(field);
+  }
+  let returnId = 0;
+  if ( fields.length == 0 ) {
+    return;
+  } else if (fields.length == 2) {
+    fields.forEach((field, i) => {
+      let lang = field[7];
+      if (lang) {
+        lang = lang.substr(4,2);
+        if (lang === 'ba') {
+          returnId = i;
+        }
+      }
+    });
+  }
+  return fields[returnId];
 }
 
 function traiteResultat(e) {
@@ -149,7 +167,6 @@ function onClick(e, div) {
     value = current.get('a') + ' ' + current.get('b');
     value = value.replace(/'/g, "\\\'");
   }
-
 
   const { idclient } = c.idref;
   let ymd = new Date().toISOString().split('T')[0].replace(/-/g, '');
